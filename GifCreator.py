@@ -11,10 +11,6 @@ brawl_stars_images = [
     'Gif Images/BibiThor.jpeg',
     'Gif Images/CordilieusOdin.jpeg'
 ]
-my_images = [
-    'Gif Images/Myself.png',
-    'Gif Images/GDGEvent.png'
-]
 nature_images = [
     'Gif Images/Sakura.png',
     'Gif Images/SakuraDay.png',
@@ -24,7 +20,6 @@ nature_images = [
 # Create empty lists to store loaded images for each theme
 e_images = []  # List for example images
 bs_images = []  # List for Brawl Stars images
-m_images = []  # List for my images
 n_images = []  # List for nature images
 
 # Get user input for theme selection
@@ -32,9 +27,8 @@ choice = int(input("""
 Get the gif, by selecting the theme (^=^)
 >> Try the below themes!
     - 1 (Brawl Stars theme✨ Gif)
-    - 2 (My Gif)
-    - 3 (Nature Gif)
-Enter your choice (1/2/3/Anything): 
+    - 2 (Nature Gif)
+Enter your choice (1/2/Anything): 
 """))
 
 # Save the list of images as a GIF using imageio.imwrite
@@ -49,12 +43,6 @@ if choice == 1:
     iio.imwrite('Generated Gifs/brawlStars.gif', bs_images, duration=500, loop=0)
     print("Check out the brawlStars.gif file - that's just created!")
 elif choice == 2:
-    for m_image in my_images:
-        image = iio.imread(m_image)
-        m_images.append(image)
-    iio.imwrite('Generated Gifs/mine.gif', m_images, duration=500, loop=0)
-    print("Check out the mine.gif file - that's just created!")
-elif choice == 3:
     for n_image in nature_images:
         image = iio.imread(n_image)
         n_images.append(image)
@@ -67,4 +55,3 @@ else:
     iio.imwrite('Generated Gifs/team.gif', e_images, duration=500, loop=0)
     print("Check out the exampleImages.gif file - that's just created!")
     print("Try the other themes too!")
-# By AVidhanR
